@@ -6,7 +6,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 
 import ToDoItemContainer from './containers/ToDoItemContainer'
-
+import NewToDoContainer from './containers/NewToDoContainer'
 
 class App extends Component {
   render() {
@@ -14,6 +14,9 @@ class App extends Component {
       <Provider store={ store }>
         <div className="App">
           <h1>hello world</h1>
+
+          <NewToDoContainer />
+
           <ToDoItemContainer />
 
         </div>
