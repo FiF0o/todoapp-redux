@@ -5,19 +5,19 @@ import './App.css';
 import store from './store'
 import { Provider } from 'react-redux'
 
-import ToDoItemContainer from './containers/ToDoItemContainer'
-import NewToDoContainer from './containers/NewToDoContainer'
+import ToDoListContainer from './containers/ToDoListContainer'
+import AddToDoContainer from './containers/AddToDoContainer'
 
 class App extends Component {
   render() {
     return (
       <Provider store={ store }>
         <div className="App">
-          <h1>hello world</h1>
+          <h1>To Do List</h1>
 
-          <NewToDoContainer />
+          <AddToDoContainer />
 
-          <ToDoItemContainer />
+          <ToDoListContainer />
 
         </div>
       </Provider>

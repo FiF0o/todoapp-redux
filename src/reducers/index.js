@@ -2,10 +2,10 @@
  * Created by jonlazarini on 23/08/16.
  */
 import { combineReducers } from 'redux'
-import newToDoItem  from './newToDoItem'
+import toDos  from './toDos'
 // console.log('newToDoItem: ', newToDoItem)
 
 const reducers = combineReducers({
-  newToDoItem,
+  toDos,
 })
 export default reducers
