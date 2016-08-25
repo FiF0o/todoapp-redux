@@ -12,7 +12,10 @@ import ToDoList from '../components/ToDoList'
 const mapDispatchToProps = (dispatch) =>
   // passing down action creator to trigger the dispatch for rendering
   // onAddToDo is given as a prop to the ToDoList component
-  bindActionCreators({ ...createToDo, ...removeToDo }, dispatch);
+  bindActionCreators({
+    onAddToDo: createToDo,
+    onDeleteToDo: removeToDo
+  }, dispatch);
 
 // retrieving attributes (via state) of the reducer to be updated when
 // dispatch is triggered

@@ -4,24 +4,42 @@
 import React from 'react';
 // Props come from the List container, text is an attribute of the tdo
 // action creator
-const ToDoItem = ({ text }) =>
-    <li>
-      <span>{ text }</span>
-    </li>
 
-// passing down the tdo item (ToDoItem) in the list and ...tdo is destructured
+// const _removeToDo = () => {
+//   const { onDeleteToDo } = this.props
+//   const deletedToDo = this._item
+//   onDeleteToDo(deletedToDo)
+// }
+
+const ToDoItem = ({ text, deleteToDo }) => {
+  return (
+  <p>
+    <span>{ text }</span>
+    <button onClick={ deleteToDo }>Delete</button>
+  </p>
+  )
+}
+// passing down the tdo item (ToDoItem) in the list (listToDo array) and
+// ...tdo is destructured to expose all his props and add a new prop
 // with the splat operator to retrieve props
-const ToDoList = ({ listToDo }) =>
-  <div>
+const ToDoList = ({ listToDo, onDeleteToDo }) => {
+  return (
+  <ul>
     {
       listToDo.map((todo) => {
+        const params = {
+          ...todo,
+          deleteToDo: () => onDeleteToDo()
+        }
         return (
-          <ul key={todo.id} >
-            <ToDoItem completed={ false } { ...todo } />
-          </ul>
+          <li
+            key={ todo.id } >
+            <ToDoItem { ...params } />
+          </li>
         )
       })
     }
-  </div>
-
+  </ul>
+  )
+}
 export default ToDoList

@@ -10,6 +10,7 @@ const toDo = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TO_DO': {
       return {
+        ...state,
         // value is passed down from the action creator
         id: action.id,
         text: action.text,

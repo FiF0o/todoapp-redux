@@ -20,19 +20,18 @@ const toDos = (state = initialState, action) => {
       return [
       // includes items from the original array with splat operators - old item
         ...state,
-        // new item added to the array which is a reducer
+        // new item added to the array which is a reducer tDo
         toDo(undefined, action)
     ]
   }
     case 'REMOVE_TO_DO': {
-
-      const removeItem = (list, index) => {
-        return list
+      const removeItem = (newAr, index) => {
+        return newAr
           .slice(0, index)
-          .concat(list.slice(index + 1))
+          .concat(newAr.slice(index + 1))
       }
 
-      return removeItem(state, state.id)
+      return removeItem(state, action.id)
   }
   default: {
     return state
