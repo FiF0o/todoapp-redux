@@ -25,13 +25,14 @@ const toDos = (state = initialState, action) => {
     ]
   }
     case 'REMOVE_TO_DO': {
-      const removeItem = (newAr, index) => {
-        return newAr
-          .slice(0, index)
-          .concat(newAr.slice(index + 1))
-      }
-
-      return removeItem(state, action.id)
+      // const removeItem = (newAr, index) => {
+      //   return newAr
+      //     .slice(0, index)
+      //     .concat(newAr.slice(index + 1))
+      // }
+      //
+      // return removeItem(state, action.id)
+      return state.filter( ({id}) => action.id !== id )
   }
   default: {
     return state

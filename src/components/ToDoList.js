@@ -29,7 +29,7 @@ const ToDoList = ({ listToDo, onDeleteToDo }) => {
       listToDo.map((todo) => {
         const params = {
           ...todo,
-          deleteToDo: () => onDeleteToDo()
+          deleteToDo: () => onDeleteToDo(todo.id)
         }
         return (
           <li
