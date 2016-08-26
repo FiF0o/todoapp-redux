@@ -17,6 +17,15 @@ const toDo = (state = initialState, action) => {
         completed: false
       }
     }
+    case 'TOGGLE_TO_DO': {
+      if (state.id !== action.id ) {
+        return state
+      }
+      return {
+        ...state,
+        completed: !state.completed
+      }
+    }
     default: {
       return state
     }

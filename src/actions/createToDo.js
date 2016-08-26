@@ -5,5 +5,6 @@
 export const createToDo = (text) => ({
   type: 'ADD_TO_DO',
   id: Date.now(),
-  text
+  text,
+  completed: false,
 })

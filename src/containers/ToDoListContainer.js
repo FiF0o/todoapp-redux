@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import { createToDo } from '../actions/createToDo'
 import { removeToDo } from '../actions/removeToDo'
+import { toggleToDo } from '../actions/toggleToDoAction'
 import ToDoList from '../components/ToDoList'
 
 // UI logic/rendering in the component
@@ -14,7 +15,8 @@ const mapDispatchToProps = (dispatch) =>
   // onAddToDo is given as a prop to the ToDoList component
   bindActionCreators({
     onAddToDo: createToDo,
-    onDeleteToDo: removeToDo
+    onDeleteToDo: removeToDo,
+    onToggleToDo: toggleToDo
   }, dispatch);
 
 // retrieving attributes (via state) of the reducer to be updated when

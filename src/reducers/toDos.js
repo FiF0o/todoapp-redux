@@ -34,6 +34,10 @@ const toDos = (state = initialState, action) => {
       // return removeItem(state, action.id)
       return state.filter( ({id}) => action.id !== id )
   }
+
+    case 'TOGGLE_TO_DO': {
+      return state.map( tdItem => toDo(tdItem, action))
+    }
   default: {
     return state
     }

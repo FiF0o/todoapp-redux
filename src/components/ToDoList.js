@@ -14,7 +14,9 @@ import React from 'react';
 const ToDoItem = ({ text, deleteToDo }) => {
   return (
   <p>
-    <span>{ text }</span>
+    <span>
+      { text }
+    </span>
     <button onClick={ deleteToDo }>Delete</button>
   </p>
   )
@@ -22,18 +24,20 @@ const ToDoItem = ({ text, deleteToDo }) => {
 // passing down the tdo item (ToDoItem) in the list (listToDo array) and
 // ...tdo is destructured to expose all his props and add a new prop
 // with the splat operator to retrieve props
-const ToDoList = ({ listToDo, onDeleteToDo }) => {
+const ToDoList = ({ listToDo, onDeleteToDo, onToggleToDo }) => {
   return (
   <ul>
     {
       listToDo.map((todo) => {
         const params = {
           ...todo,
-          deleteToDo: () => onDeleteToDo(todo.id)
+          deleteToDo: () => onDeleteToDo(todo.id),
         }
         return (
           <li
-            key={ todo.id } >
+            key={ todo.id }
+            onClick={ () => onToggleToDo(todo.id) }
+            style={ {textDecoration: todo.completed ? 'line-through' : 'none'} } >
             <ToDoItem { ...params } />
           </li>
         )
