@@ -3,7 +3,6 @@
  */
 import { combineReducers } from 'redux'
 import toDos  from './toDos'
-// console.log('newToDoItem: ', newToDoItem)
 
 const reducers = combineReducers({
   toDos,
