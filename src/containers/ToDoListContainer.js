@@ -22,9 +22,19 @@ const mapDispatchToProps = (dispatch) =>
 // retrieving attributes (via state) of the reducer to be updated when
 // dispatch is triggered
 const mapStateToProps = (state) => {
+
+
+  if(state.visibilityFilter === 'SHOW_COMPLETED') {
+    return { listToDo: state.toDos.filter( todo => todo.completed ) }
+  }
+  else if(state.visibilityFilter === 'SHOW_ACTIVE') {
+    return { listToDo: state.toDos.filter( todo => !todo.completed ) }
+  }
+  else {
   // { toDos } is destructured, retrieving state.toDos
   // new attribute ToDoList is injected in the component as a prop
   return { listToDo: state.toDos }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);

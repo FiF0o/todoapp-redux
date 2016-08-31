@@ -13,8 +13,6 @@ values are passed down from the action creator, e.g.
   }
 */
 const toDos = (state = initialState, action) => {
-  console.log('action: ', action)
-  console.log('state: ', state)
   switch (action.type) {
     case 'ADD_TO_DO': {
       return [
@@ -25,13 +23,6 @@ const toDos = (state = initialState, action) => {
     ]
   }
     case 'REMOVE_TO_DO': {
-      // const removeItem = (newAr, index) => {
-      //   return newAr
-      //     .slice(0, index)
-      //     .concat(newAr.slice(index + 1))
-      // }
-      //
-      // return removeItem(state, action.id)
       return state.filter( ({id}) => action.id !== id )
   }
 
