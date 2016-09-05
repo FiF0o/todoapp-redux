@@ -9,7 +9,17 @@ import ToDoListContainer from './containers/ToDoListContainer'
 import AddToDoContainer from './containers/AddToDoContainer'
 import FilterContainer from './containers/FilterContainer'
 
+import getPeopleAsync from  './actions/getPeopleAsync'
+
+
 class App extends Component {
+
+  componentWillMount(){
+    store.dispatch(getPeopleAsync());
+  }
+  componentDidMount() {
+  }
+
   render() {
     return (
       <Provider store={ store }>
@@ -21,6 +31,12 @@ class App extends Component {
           <AddToDoContainer />
 
           <ToDoListContainer />
+
+          <h2>Test Redux Thunk</h2>
+          <div>
+            <span>Placeholder for Async call, </span>
+            <span>http://reqres.in/api/users?page=2</span>
+          </div>
 
         </div>
       </Provider>
