@@ -4,9 +4,11 @@
 import { combineReducers } from 'redux'
 import toDos  from './toDos'
 import visibilityFilter from './visibilityFilter'
+import people from './people'
 
 const reducers = combineReducers({
   toDos,
-  visibilityFilter
+  visibilityFilter,
+  people
 })
 export default reducers

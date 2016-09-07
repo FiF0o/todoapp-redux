@@ -1,16 +1,16 @@
-export const getPeopleAsync = () => dispatch => {
+function fetchingPage( page='2' ) {
+  return fetch(`http://reqres.in/api/users?page=${page}`)
+}
+
+export const getPeopleAsync = (page) => dispatch => {
   dispatch(fetchingPeople())
-  fetch('http://reqres.in/api/users?page=2')
+  fetchingPage(page)
     .then(response => response.json())
     // data is an array
     .then(r => (r.data))
     .then(people => {
       dispatch(fetchedPeople(people))
       console.log('people: ', people)
-      // people.id
-      // people.avatar
-      // people.first_name
-      // people.last_name
     })
 }
 
@@ -28,5 +28,3 @@ function fetchingPeople() {
     type: 'FETCHING_PEOPLE'
   };
 }
-
-export default getPeopleAsync

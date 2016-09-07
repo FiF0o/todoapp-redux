@@ -1,27 +1,47 @@
 /**
  * Created by jonlazarini on 05/09/16.
  */
-/**
- * Created by jonlazarini on 23/08/16.
- */
+import React from 'react'
+import store from '../store'
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getPeople } from '../actions/getPeople'
+import { getPeopleAsync } from '../actions/getPeopleAsync'
 import PeopleList from '../components/PeopleList'
 
-// UI logic/rendering in the component
 const mapDispatchToProps = (dispatch) =>
-  // passing down action creator to trigger the dispatch for rendering
-  // onAddToDo is given as a prop to the PeopleList component
   bindActionCreators({
-    onGetPeople: getPeople,
-  }, dispatch);
+    onLoadPeople: getPeopleAsync
+  }, dispatch)
 
-// retrieving attributes (via state) of the reducer to be updated when
-// dispatch is triggered
 const mapStateToProps = (state) => {
-  return { peopleList: state.peopleList }
+  return { peopleList: state.people }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PeopleList)
+// export default connect(mapStateToProps)(PeopleList)
+
+
+
+class PeopleContainer extends React.Component {
+ componentDidMount() {
+   store.dispatch(getPeopleAsync())
+ }
+
+ render(){
+   return (
+      <PeopleList { ...this.props } />
+   )
+ }
+ // _yoPeople() {
+ //   store.dispatch(getPeopleAsync())
+ // }
+
+}
+
+// destructuring this.props to pass it down to the child component PeopleList
+// better use PeopleList(this.props) for performance, jsx recompiling
+
+export default connect(mapStateToProps, mapDispatchToProps)(PeopleContainer)
+
+

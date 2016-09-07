@@ -8,18 +8,13 @@ import { Provider } from 'react-redux'
 import ToDoListContainer from './containers/ToDoListContainer'
 import AddToDoContainer from './containers/AddToDoContainer'
 import FilterContainer from './containers/FilterContainer'
+import PeopleContainer from './containers/PeopleContainer'
+import FindPeopleContainer from './containers/FindPeopleContainer'
 
-import getPeopleAsync from  './actions/getPeopleAsync'
+// import getPeopleAsync from  './actions/getPeopleAsync'
 
 
 class App extends Component {
-
-  componentWillMount(){
-    store.dispatch(getPeopleAsync());
-  }
-  componentDidMount() {
-  }
-
   render() {
     return (
       <Provider store={ store }>
@@ -36,6 +31,10 @@ class App extends Component {
           <div>
             <span>Placeholder for Async call, </span>
             <span>http://reqres.in/api/users?page=2</span>
+            <PeopleContainer />
+          </div>
+          <div>
+            <FindPeopleContainer />
           </div>
 
         </div>
