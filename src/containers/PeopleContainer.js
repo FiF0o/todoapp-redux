@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) =>
   }, dispatch)
 
 const mapStateToProps = (state) => {
+  console.log('state PEOPLE CONTAINER', state)
   return { peopleList: state.people }
 }
 

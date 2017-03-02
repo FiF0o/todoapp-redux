@@ -3,10 +3,9 @@
  */
 import React from 'react'
 
-const People = ({ id, avatar, first_name, last_name }) => {
+const People = ({ avatar, first_name, last_name }) => {
   return (
     <div>
-      <p>{ id }</p>
       <img src={ avatar } alt=""/>
       <p>{ first_name }</p>
       <p>{ last_name }</p>

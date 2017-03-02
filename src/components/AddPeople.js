@@ -11,7 +11,7 @@ class AddPeople extends React.Component {
       <div>
         <form action="" onSubmit={ this._submitPeople.bind(this) }>
           <input type="text" ref={ (input) => { this._newPeople = input } }/>
-          <button type="submit">search people</button>
+          <button type="submit">search page number</button>
         </form>
       </div>
     )

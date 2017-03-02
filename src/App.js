@@ -29,8 +29,7 @@ class App extends Component {
 
           <h2>Test Redux Thunk</h2>
           <div>
-            <span>Placeholder for Async call, </span>
-            <span>http://reqres.in/api/users?page=2</span>
+            <span> Async call, </span>
             <PeopleContainer />
           </div>
           <div>
@@ -43,4 +42,4 @@ class App extends Component {
   }
 }
 
-export default App;
+  export default App;
