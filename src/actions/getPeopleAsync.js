@@ -1,7 +1,8 @@
-var myHeaders = new Headers({"Content-Type":"application/json"});
-myHeaders.append("Access-Control-Allow-Origin", "*");
+// import fetch from 'isomorphic-fetch'
 
-var myInit = {
+// creates headers for client-side req using during fetch
+var myHeaders = new Headers({"Content-Type":"application/json"});
+var reqHeader = {
     method: 'GET',
     headers: myHeaders,
     mode: 'cors',
@@ -9,7 +10,7 @@ var myInit = {
 };
 
 function fetchingPage( page='2' ) {
-  return fetch(`http://reqres.in/api/users?page=${page}`, myInit)
+  return fetch(`https://reqres.in/api/users?page=${page}`, reqHeader)
 }
 
 export const getPeopleAsync = (page) => dispatch => {
