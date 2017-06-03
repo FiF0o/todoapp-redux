@@ -4,7 +4,6 @@
 import React from 'react'
 
 // UI logic rendering is handled in the component not reducer
-
 class AddToDo extends React.Component {
   render() {
     return (

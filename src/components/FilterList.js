@@ -9,8 +9,8 @@ const FilterList = ({ onFilter, currentFilter }) => {
   return (
     <div>
       <button className={ currentFilter === 'SHOW_ALL' ? 'current' : '' } onClick={ () => onFilter('SHOW_ALL') }>SHOW_ALL</button>
-      <button className={ currentFilter === 'SHOW_COMPLETED' ? 'current' : '' } onClick={ () => onFilter('SHOW_COMPLETED') }>SHOW_COMPLETED</button>
-      <button className={ currentFilter === 'SHOW_ACTIVE' ? 'current' : '' } onClick={ () => onFilter('SHOW_ACTIVE') }>SHOW_ACTIVE</button>
+      <button className={ currentFilter === 'SHOW_COMPLETED' ? 'completed' : '' } onClick={ () => onFilter('SHOW_COMPLETED') }>SHOW_COMPLETED</button>
+      <button className={ currentFilter === 'SHOW_ACTIVE' ? 'active' : '' } onClick={ () => onFilter('SHOW_ACTIVE') }>SHOW_ACTIVE</button>
     </div>
   )
 }

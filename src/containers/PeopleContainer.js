@@ -22,8 +22,6 @@ const mapStateToProps = (state) => {
 
 // export default connect(mapStateToProps)(PeopleList)
 
-
-
 class PeopleContainer extends React.Component {
  componentDidMount() {
    store.dispatch(getPeopleAsync())
@@ -31,12 +29,10 @@ class PeopleContainer extends React.Component {
 
  render(){
    return (
+       // ...this.props = onLoadPeople, peopleList
       <PeopleList { ...this.props } />
    )
  }
- // _yoPeople() {
- //   store.dispatch(getPeopleAsync())
- // }
 
 }
 

@@ -4,9 +4,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { createToDo } from '../actions/createToDo'
-import { removeToDo } from '../actions/removeToDo'
-import { toggleToDo } from '../actions/toggleToDo'
+import { createToDo, removeToDo, toggleToDo } from '../actions/ToDo'
 import ToDoList from '../components/ToDoList'
 
 // UI logic/rendering in the component

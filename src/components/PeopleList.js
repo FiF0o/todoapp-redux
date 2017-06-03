@@ -13,10 +13,7 @@ const People = ({ avatar, first_name, last_name }) => {
   )
 }
 
-const PeopleList = ({ peopleList, onLoadPeople }) => {
-  console.log('peopleList: ', peopleList)
-  console.log('onLoadPeople: ', onLoadPeople)
-  return (
+const PeopleList = ({ peopleList, onLoadPeople }) => (
     <div>
       <ul>
         {
@@ -34,6 +31,5 @@ const PeopleList = ({ peopleList, onLoadPeople }) => {
       </ul>
     </div>
   )
-}
 
 export default PeopleList

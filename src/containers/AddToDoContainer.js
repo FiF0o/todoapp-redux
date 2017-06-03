@@ -4,14 +4,10 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { createToDo } from '../actions/createToDo';
+import { createToDo } from '../actions/ToDo';
 
 import AddToDo from '../components/AddToDo';
 
-/*
- triggers UI rendering with dispatch method by passing in { onUserSubmit:
- userQuery } object which is a prop of AddToDo
- */
 const mapDispatchToProps = (dispatch) =>
   // passing down onUserSubmit prop to Search component with the action
   // creator createToDo

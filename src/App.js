@@ -11,8 +11,6 @@ import FilterContainer from './containers/FilterContainer'
 import PeopleContainer from './containers/PeopleContainer'
 import FindPeopleContainer from './containers/FindPeopleContainer'
 
-// import getPeopleAsync from  './actions/getPeopleAsync'
-
 
 class App extends Component {
   render() {
@@ -29,11 +27,8 @@ class App extends Component {
 
           <h2>Test Redux Thunk</h2>
           <div>
-            <span> Async call, </span>
-            <PeopleContainer />
-          </div>
-          <div>
             <FindPeopleContainer />
+            <PeopleContainer />
           </div>
 
         </div>
@@ -42,4 +37,4 @@ class App extends Component {
   }
 }
 
-  export default App;
+export default App;

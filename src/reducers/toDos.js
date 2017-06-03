@@ -23,10 +23,12 @@ const toDos = (state = initialState, action) => {
     ]
   }
     case 'REMOVE_TO_DO': {
+      // T0d0.id destructured
       return state.filter( ({id}) => action.id !== id )
   }
 
     case 'TOGGLE_TO_DO': {
+      // t0d0 items are passed in the t0d0 reducer
       return state.map( tdItem => toDo(tdItem, action))
     }
   default: {

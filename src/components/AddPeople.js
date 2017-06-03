@@ -4,7 +4,6 @@
 import React from 'react'
 
 // UI logic rendering is handled in the component not reducer
-
 class AddPeople extends React.Component {
   render() {
     return (

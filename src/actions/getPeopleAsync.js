@@ -26,8 +26,6 @@ export const getPeopleAsync = (page) => dispatch => {
     })
 }
 
-// r is the response from the api server AND list the data array returned
-// from the response
 function fetchedPeople(list) {
   return {
     type: 'FETCHED_PEOPLE',
