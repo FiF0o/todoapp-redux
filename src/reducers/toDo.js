@@ -12,7 +12,7 @@ const toDo = (state = initialState, action) => {
         id: action.id,
         text: action.text,
         completed: false
-      }
+      }()
     }
     case 'TOGGLE_TO_DO': {
       if (state.id !== action.id ) {

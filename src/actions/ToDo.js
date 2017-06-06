@@ -17,4 +17,4 @@ export const removeToDo = (id) => ({
 export const toggleToDo = (id) => ({
     type: 'TOGGLE_TO_DO',
     id: id,
-})
+});
